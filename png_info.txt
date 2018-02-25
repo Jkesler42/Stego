@@ -1,0 +1,33 @@
+File Sig - 8 bytes - 89 50 4e 47 0d 0a 1a 0a
+
+chunks
+
+Length - 4 bytes - Doesn't include type or CRC
+chunk type - 4 bytes - 
+Data - Length determined by "length field" - Where the magic happens
+CRC - 4 bytes - calculated from all bytes except length field
+
+
+4 bits (the 5th bit of every byte) to denote properties
+
+bit 5 of first byte - Ancillary or critical
+0 if critical 
+1 if ancillary - can be ignored
+
+bit 5 of second byte - Private bit
+0 public
+1 private
+Administrative, no real use
+
+bit 5 of third byte - Must be 0
+
+bit 5 of fourth byte - safe to copy
+0 unsafe
+1 safe
+test this
+
+Chunk types
+
+IHDR - first chunk, 49 48 44 52
+
+IDAT 49 44 41 54 - This is where we want to change things.
